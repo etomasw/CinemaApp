@@ -1,11 +1,12 @@
 package com.cinemapp.cinemapp.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
 @Table(name = "peliculas")
-public class Pelicula {
+public class Pelicula implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,13 +24,16 @@ public class Pelicula {
     inverseJoinColumns = @JoinColumn(name = "id_genero"))
     private List<Genero> generos;
 
-    public Pelicula(Long id, String titulo, String sinopsis, int valoracion, int duracion, List<Genero> generos) {
+    private String portadaImagenUrl;
+
+    public Pelicula(Long id, String titulo, String sinopsis, int valoracion, int duracion, List<Genero> generos, String portadaImagenUrl) {
         this.id = id;
         this.titulo = titulo;
         this.sinopsis = sinopsis;
         this.valoracion = valoracion;
         this.duracion = duracion;
         this.generos = generos;
+        this.portadaImagenUrl = portadaImagenUrl;
     }
 
     public Pelicula() {
@@ -81,5 +85,13 @@ public class Pelicula {
 
     public void setGeneros(List<Genero> generos) {
         this.generos = generos;
+    }
+
+    public String getPortadaImagenUrl() {
+        return portadaImagenUrl;
+    }
+
+    public void setPortadaImagenUrl(String portadaImagenUrl) {
+        this.portadaImagenUrl = portadaImagenUrl;
     }
 }

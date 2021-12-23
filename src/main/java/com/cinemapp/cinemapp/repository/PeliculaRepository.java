@@ -11,5 +11,5 @@ public interface PeliculaRepository extends JpaRepository<Pelicula, Long> {
     Pelicula findByTitulo(String titulo);
     Pelicula findByValoracion(int valoracion);
     void deleteById(Long id);
-    List<Genero> findByGeneros(Genero genero);
+    List<Pelicula> findByGenerosIn(List<Genero> genero);
 }

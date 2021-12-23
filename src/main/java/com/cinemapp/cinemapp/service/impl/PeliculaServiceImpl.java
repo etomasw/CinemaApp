@@ -37,13 +37,13 @@ public class PeliculaServiceImpl implements PeliculaService {
     }
 
     @Override
-    public Pelicula findPeliculaById(Long id) {
+    public Pelicula buscarPeliculaPorId(Long id) {
         return this.peliculaRepository.findById(id).get();
     }
 
     @Override
     public void eliminarPeliculaPorId(Long id) {
-        if(findPeliculaById(id) != null) {
+        if(buscarPeliculaPorId(id) != null) {
             this.peliculaRepository.deleteById(id);
         } else {
             throw new RuntimeException(FILM_NOT_FOUND);
@@ -56,7 +56,7 @@ public class PeliculaServiceImpl implements PeliculaService {
     }
 
     @Override
-    public List<Pelicula> buscarPeliculasPorGenero(Genero genero) {
-        return null;
+    public List<Pelicula> buscarPeliculasPorGenero(List<Genero> generos) {
+        return this.peliculaRepository.findByGenerosIn(generos);
     }
 }

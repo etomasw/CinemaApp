@@ -1,10 +1,11 @@
 package com.cinemapp.cinemapp.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "generos")
-public class Genero {
+public class Genero implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

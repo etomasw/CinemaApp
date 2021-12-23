@@ -9,8 +9,8 @@ public interface PeliculaService {
 
     Pelicula crearPelicula(Pelicula pelicula);
     Pelicula editarPelicula(Pelicula pelicula);
-    Pelicula findPeliculaById(Long id);
+    Pelicula buscarPeliculaPorId(Long id);
     void eliminarPeliculaPorId(Long id);
     List<Pelicula> getPeliculas();
-    List<Pelicula> buscarPeliculasPorGenero(Genero genero);
+    List<Pelicula> buscarPeliculasPorGenero(List<Genero> generos);
 }
