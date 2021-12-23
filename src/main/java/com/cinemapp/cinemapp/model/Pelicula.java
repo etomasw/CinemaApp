@@ -23,5 +23,63 @@ public class Pelicula {
     inverseJoinColumns = @JoinColumn(name = "id_genero"))
     private List<Genero> generos;
 
+    public Pelicula(Long id, String titulo, String sinopsis, int valoracion, int duracion, List<Genero> generos) {
+        this.id = id;
+        this.titulo = titulo;
+        this.sinopsis = sinopsis;
+        this.valoracion = valoracion;
+        this.duracion = duracion;
+        this.generos = generos;
+    }
 
+    public Pelicula() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getSinopsis() {
+        return sinopsis;
+    }
+
+    public void setSinopsis(String sinopsis) {
+        this.sinopsis = sinopsis;
+    }
+
+    public int getValoracion() {
+        return valoracion;
+    }
+
+    public void setValoracion(int valoracion) {
+        this.valoracion = valoracion;
+    }
+
+    public int getDuracion() {
+        return duracion;
+    }
+
+    public void setDuracion(int duracion) {
+        this.duracion = duracion;
+    }
+
+    public List<Genero> getGeneros() {
+        return generos;
+    }
+
+    public void setGeneros(List<Genero> generos) {
+        this.generos = generos;
+    }
 }
